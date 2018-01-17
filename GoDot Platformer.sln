@@ -1,0 +1,19 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoDot Platformer", "GoDot Platformer.csproj", "{BF339792-78DC-44AF-A97C-33A80250AECC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+	Debug|Any CPU = Debug|Any CPU
+	Release|Any CPU = Release|Any CPU
+	Tools|Any CPU = Tools|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BF339792-78DC-44AF-A97C-33A80250AECC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF339792-78DC-44AF-A97C-33A80250AECC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF339792-78DC-44AF-A97C-33A80250AECC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF339792-78DC-44AF-A97C-33A80250AECC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF339792-78DC-44AF-A97C-33A80250AECC}.Tools|Any CPU.ActiveCfg = Tools|Any CPU
+		{BF339792-78DC-44AF-A97C-33A80250AECC}.Tools|Any CPU.Build.0 = Tools|Any CPU
+	EndGlobalSection
+EndGlobal

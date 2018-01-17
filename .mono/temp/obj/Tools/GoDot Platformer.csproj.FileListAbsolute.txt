@@ -1,0 +1,6 @@
+D:\GoDot Games\GoDotPlatformer\.mono\temp\obj\Tools\GoDot Platformer.csprojResolveAssemblyReference.cache
+D:\GoDot Games\GoDotPlatformer\.mono\temp\obj\Tools\GoDot Platformer.csproj.CoreCompileInputs.cache
+D:\GoDot Games\GoDotPlatformer\.mono\temp\bin\Tools\GoDot Platformer.dll
+D:\GoDot Games\GoDotPlatformer\.mono\temp\bin\Tools\GoDot Platformer.pdb
+D:\GoDot Games\GoDotPlatformer\.mono\temp\obj\Tools\GoDot Platformer.dll
+D:\GoDot Games\GoDotPlatformer\.mono\temp\obj\Tools\GoDot Platformer.pdb

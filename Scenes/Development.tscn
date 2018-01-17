@@ -1,68 +1,237 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Sprites/player.png" type="Texture" id=1]
-[ext_resource path="res://Sprites/wall.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Controllers/PlayerController.cs" type="Script" id=1]
+[ext_resource path="res://Sprites/Characters/player.png" type="Texture" id=2]
+[ext_resource path="res://Blocks/Development/Wall.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 10, 10 )
+extents = Vector2( 16, 16 )
 
 [node name="Scene" type="Node" index="0"]
 
-[node name="RigidBody2D" type="RigidBody2D" parent="." index="0"]
+[node name="PlayerKinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
-position = Vector2( 330, 410 )
+editor/display_folded = true
+position = Vector2( 336, -240 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
-mode = 2
-mass = 1.0
-friction = 1.0
-bounce = 0.0
-gravity_scale = 1.0
-custom_integrator = false
-continuous_cd = 0
-contacts_reported = 0
-contact_monitor = false
-sleeping = false
-can_sleep = true
-linear_velocity = Vector2( 0, 0 )
-linear_damp = -1.0
-angular_velocity = 0.0
-angular_damp = -1.0
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="player" type="Sprite" parent="RigidBody2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerKinematicBody2D" index="0"]
 
-scale = Vector2( 1.875, 1.875 )
-texture = ExtResource( 1 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Sprite" type="Sprite" parent="PlayerKinematicBody2D" index="1"]
+
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Camera2D" type="Camera2D" parent="PlayerKinematicBody2D" index="2"]
+
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 1, 1 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = true
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+_sections_unfolded = [ "Transform" ]
 
 [node name="WorldObjects" type="Node" parent="." index="1"]
 
-[node name="Wall" type="StaticBody2D" parent="WorldObjects" index="0"]
-
 editor/display_folded = true
-position = Vector2( 170, 470 )
-scale = Vector2( 0.625001, 0.625 )
-input_pickable = false
-collision_layer = 1
-collision_mask = 1
-constant_linear_velocity = Vector2( 0, 0 )
-constant_angular_velocity = 0.0
-friction = 1.0
-bounce = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldObjects/Wall" index="0"]
+[node name="Wall" parent="WorldObjects" index="0" instance=ExtResource( 3 )]
 
-editor/display_folded = true
-scale = Vector2( 2.46154, 2.46154 )
-shape = SubResource( 1 )
-_sections_unfolded = [ "Transform", "Visibility" ]
+position = Vector2( 16, -16 )
 
-[node name="wall" type="Sprite" parent="WorldObjects/Wall/CollisionShape2D" index="0"]
+[node name="Wall39" parent="WorldObjects" index="1" instance=ExtResource( 3 )]
 
-scale = Vector2( 0.812499, 0.812499 )
-texture = ExtResource( 2 )
+position = Vector2( 656, -16 )
+
+[node name="Wall29" parent="WorldObjects" index="2" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -208 )
+
+[node name="Wall43" parent="WorldObjects" index="3" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -208 )
+
+[node name="Wall25" parent="WorldObjects" index="4" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -112 )
+
+[node name="Wall40" parent="WorldObjects" index="5" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -112 )
+
+[node name="Wall30" parent="WorldObjects" index="6" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -304 )
+
+[node name="Wall32" parent="WorldObjects" index="7" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -304 )
+
+[node name="Wall21" parent="WorldObjects" index="8" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -48 )
+
+[node name="Wall35" parent="WorldObjects" index="9" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -48 )
+
+[node name="Wall27" parent="WorldObjects" index="10" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -240 )
+
+[node name="Wall36" parent="WorldObjects" index="11" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -240 )
+
+[node name="Wall23" parent="WorldObjects" index="12" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -144 )
+
+[node name="Wall34" parent="WorldObjects" index="13" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -144 )
+
+[node name="Wall26" parent="WorldObjects" index="14" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -336 )
+
+[node name="Wall42" parent="WorldObjects" index="15" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -336 )
+
+[node name="Wall22" parent="WorldObjects" index="16" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -80 )
+
+[node name="Wall38" parent="WorldObjects" index="17" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -80 )
+
+[node name="Wall28" parent="WorldObjects" index="18" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -272 )
+
+[node name="Wall37" parent="WorldObjects" index="19" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -272 )
+
+[node name="Wall24" parent="WorldObjects" index="20" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -176 )
+
+[node name="Wall41" parent="WorldObjects" index="21" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -176 )
+
+[node name="Wall31" parent="WorldObjects" index="22" instance=ExtResource( 3 )]
+
+position = Vector2( 16, -368 )
+
+[node name="Wall33" parent="WorldObjects" index="23" instance=ExtResource( 3 )]
+
+position = Vector2( 656, -368 )
+
+[node name="Wall13" parent="WorldObjects" index="24" instance=ExtResource( 3 )]
+
+position = Vector2( 336, -16 )
+
+[node name="Wall7" parent="WorldObjects" index="25" instance=ExtResource( 3 )]
+
+position = Vector2( 176, -16 )
+
+[node name="Wall11" parent="WorldObjects" index="26" instance=ExtResource( 3 )]
+
+position = Vector2( 496, -16 )
+
+[node name="Wall2" parent="WorldObjects" index="27" instance=ExtResource( 3 )]
+
+position = Vector2( 48, -16 )
+
+[node name="Wall17" parent="WorldObjects" index="28" instance=ExtResource( 3 )]
+
+position = Vector2( 368, -16 )
+
+[node name="Wall9" parent="WorldObjects" index="29" instance=ExtResource( 3 )]
+
+position = Vector2( 208, -16 )
+
+[node name="Wall18" parent="WorldObjects" index="30" instance=ExtResource( 3 )]
+
+position = Vector2( 528, -16 )
+
+[node name="Wall3" parent="WorldObjects" index="31" instance=ExtResource( 3 )]
+
+position = Vector2( 80, -16 )
+
+[node name="Wall14" parent="WorldObjects" index="32" instance=ExtResource( 3 )]
+
+position = Vector2( 400, -16 )
+
+[node name="Wall8" parent="WorldObjects" index="33" instance=ExtResource( 3 )]
+
+position = Vector2( 240, -16 )
+
+[node name="Wall16" parent="WorldObjects" index="34" instance=ExtResource( 3 )]
+
+position = Vector2( 560, -16 )
+
+[node name="Wall4" parent="WorldObjects" index="35" instance=ExtResource( 3 )]
+
+position = Vector2( 112, -16 )
+
+[node name="Wall20" parent="WorldObjects" index="36" instance=ExtResource( 3 )]
+
+position = Vector2( 432, -16 )
+
+[node name="Wall10" parent="WorldObjects" index="37" instance=ExtResource( 3 )]
+
+position = Vector2( 272, -16 )
+
+[node name="Wall19" parent="WorldObjects" index="38" instance=ExtResource( 3 )]
+
+position = Vector2( 592, -16 )
+
+[node name="Wall5" parent="WorldObjects" index="39" instance=ExtResource( 3 )]
+
+position = Vector2( 144, -16 )
+
+[node name="Wall12" parent="WorldObjects" index="40" instance=ExtResource( 3 )]
+
+position = Vector2( 464, -16 )
+
+[node name="Wall6" parent="WorldObjects" index="41" instance=ExtResource( 3 )]
+
+position = Vector2( 304, -16 )
+
+[node name="Wall15" parent="WorldObjects" index="42" instance=ExtResource( 3 )]
+
+position = Vector2( 624, -16 )
 
 
