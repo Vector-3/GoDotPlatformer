@@ -7,30 +7,26 @@
 [sub_resource type="RectangleShape2D" id=1]
 
 custom_solver_bias = 0.0
-extents = Vector2( 16, 16 )
+extents = Vector2( 10, 10 )
 
 [node name="Scene" type="Node" index="0"]
 
 [node name="PlayerKinematicBody2D" type="KinematicBody2D" parent="." index="0"]
 
-editor/display_folded = true
-position = Vector2( 336, -240 )
+position = Vector2( 336, -176 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
 collision/safe_margin = 0.08
 script = ExtResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerKinematicBody2D" index="0"]
 
 shape = SubResource( 1 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Sprite" type="Sprite" parent="PlayerKinematicBody2D" index="1"]
 
 texture = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
 [node name="Camera2D" type="Camera2D" parent="PlayerKinematicBody2D" index="2"]
 
@@ -56,7 +52,7 @@ drag_margin_bottom = 0.2
 editor_draw_screen = true
 editor_draw_limits = false
 editor_draw_drag_margin = false
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Smoothing" ]
 
 [node name="WorldObjects" type="Node" parent="." index="1"]
 
@@ -233,5 +229,46 @@ position = Vector2( 304, -16 )
 [node name="Wall15" parent="WorldObjects" index="42" instance=ExtResource( 3 )]
 
 position = Vector2( 624, -16 )
+
+[node name="ResourcePreloader" type="ResourcePreloader" parent="." index="2"]
+
+resources = [ PoolStringArray(  ), [  ] ]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." index="3"]
+
+layer = 1
+offset = Vector2( 0, 0 )
+rotation = 0.0
+scale = Vector2( 1, 1 )
+transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+
+[node name="DebugLabel" type="RichTextLabel" parent="CanvasLayer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = 283.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 4
+text = "Debug Information"
+scroll_active = false
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+_sections_unfolded = [ "Rect" ]
 
 
